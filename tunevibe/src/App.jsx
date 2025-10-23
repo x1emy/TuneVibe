@@ -13,7 +13,7 @@ export default function App() {
   const [audio, setAudio] = useState(null);
   const [randomSong, setRandomSong] = useState(null);
 
-  // 🎵 Функция для загрузки песен по имени артиста
+  //  Функция для загрузки песен по имени артиста
   const fetchSongs = async (artist) => {
     try {
       setLoading(true);
@@ -21,7 +21,7 @@ export default function App() {
       setSongs([]);
       setArtistInfo(null);
 
-      // 1️⃣ iTunes API — песни
+      // iTunes API  песни
       const res = await fetch(
         `https://itunes.apple.com/search?term=${encodeURIComponent(artist)}&media=music&limit=12`
       );
@@ -30,7 +30,7 @@ export default function App() {
       if (data.results.length === 0) throw new Error("No songs found.");
       setSongs(data.results);
 
-      // 2️⃣ TheAudioDB API — информация об исполнителе
+      // TheAudioDB API информация об исполнителе
       const url = `https://theaudiodb.com/api/v1/json/2/search.php?s=${encodeURIComponent(artist)}`;
       const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
       const infoRes = await fetch(proxyUrl);
@@ -46,14 +46,14 @@ export default function App() {
     }
   };
 
-  // 🎶 Получаем случайного артиста при первом запуске
+  // Получаем случайного артиста при первом запуске
   useEffect(() => {
     const randomArtists = ["Adele", "Coldplay", "Drake"];
     const random = randomArtists[Math.floor(Math.random() * randomArtists.length)];
     fetchSongs(random);
   }, []);
 
-  // 🔍 Поиск
+  // Поиск
   const handleSearch = () => {
     if (!query.trim()) {
       setError("Please enter an artist name.");
@@ -62,7 +62,7 @@ export default function App() {
     fetchSongs(query.trim());
   };
 
-  // 🔄 Очистка
+  // Очистка
   const handleClear = () => {
     setQuery("");
     setSongs([]);
@@ -71,7 +71,7 @@ export default function App() {
     if (audio) audio.pause();
   };
 
-  // 🎯 Рандомный артист
+  // Рандомный артист
   const handleFeelingLucky = () => {
     const artists = ["The Weeknd", "Adele", "Eminem", "Dua Lipa", "Coldplay", "Drake"];
     const random = artists[Math.floor(Math.random() * artists.length)];
@@ -79,7 +79,7 @@ export default function App() {
     fetchSongs(random);
   };
 
-  // ▶️ Проигрывание
+  // Проигрывание
   const handlePlayPreview = (previewUrl) => {
     if (audio) audio.pause();
     const newAudio = new Audio(previewUrl);
@@ -87,7 +87,7 @@ export default function App() {
     setAudio(newAudio);
   };
 
-  // ⏹️ Остановка
+  // Остановка
   const handleStopPreview = () => {
     if (audio) {
       audio.pause();
@@ -95,7 +95,7 @@ export default function App() {
     }
   };
 
-  // 🎵 Рандомная песня дня
+  // Рандомная песня дня
   const fetchRandomSong = async () => {
     try {
       const genres = ["pop", "rock", "hiphop", "jazz", "indie"];
@@ -119,7 +119,7 @@ export default function App() {
         <p>Discover artists, songs & a random tune of the day 🎶</p>
       </header>
 
-      {/* 🌈 Рандомная песня дня */}
+      {/* Рандомная песня дня */}
       {randomSong && (
         <div className="random-song neon-card">
           <h2>🎵 Song of the Day</h2>
