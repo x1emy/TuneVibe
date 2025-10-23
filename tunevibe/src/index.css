@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #0a0a0f 0%, #000 100%);
+  color: #fff;
+}
+
+.app-container {
+  text-align: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 3rem;
+  color: #a855f7;
+  text-shadow: 0 0 15px #a855f7;
+}
+
+.subtitle {
+  color: #9ca3af;
+  margin-bottom: 2rem;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+input {
+  padding: 0.7rem 1rem;
+  border-radius: 30px;
+  border: 2px solid #9333ea;
+  background: #111;
+  color: #fff;
+  width: 300px;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #9333ea;
+}
+
+.btn {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-btn {
+  background: #9333ea;
+  color: #fff;
+}
+
+.search-btn:hover {
+  box-shadow: 0 0 10px #a855f7;
+}
+
+.clear-btn {
+  background: #444;
+  color: #ddd;
+}
+
+.song-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.song-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.song-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #a855f7;
+}
+
+.song-info h3 {
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.song-info p {
+  color: #9ca3af;
+  margin: 0.5rem 0;
+}
+
+.play-btn {
+  background: #a855f7;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.play-btn:hover {
+  box-shadow: 0 0 10px #a855f7;
+}
+
+footer {
+  margin-top: 3rem;
+  color: #666;
+}
+
+.neon {
+  color: #a855f7;
+  text-shadow: 0 0 10px #a855f7;
+}
+.play-btn {
+  background: linear-gradient(90deg, #9333ea, #a855f7);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.play-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #a855f7;
+}
